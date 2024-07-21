@@ -1,12 +1,21 @@
-from flask import Flask
+from config import config_dict
+from flask_migrate import Migrate
+from model import db
+from applet_app import create_applet_app
 
-app = Flask(__name__)
+
+app = create_applet_app(config_dict['base'])
+
+# 数据库迁移脚本
+migrate = Migrate(app, db)
 
 
 @app.route('/')
 def hello_world():  # put application's code here
+    print(app.config['SECRET_KEY'])
     return 'Hello World!'
 
 
-if __name__ == '__main__':
-    app.run()
+
+
+print(app.url_map)
