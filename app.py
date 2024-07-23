@@ -1,6 +1,6 @@
 from config import config_dict
 from flask_migrate import Migrate
-from model import db
+from models import db
 from applet_app import create_applet_app
 
 

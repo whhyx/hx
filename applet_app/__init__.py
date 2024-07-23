@@ -1,5 +1,5 @@
 from flask import Flask
-from model import db
+from models import db
 def create_applet_app(config_name=None):
     app = Flask(__name__)
     # 配置项目配置文件
